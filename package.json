@@ -1,0 +1,48 @@
+{
+  "name": "aggressive-split-test",
+  "version": "1.0.0",
+  "description": "Test behavior of the AggressiveSplittingPlugin with DllPlugin and UglifyJsPlugin",
+  "main": "index.js",
+  "scripts": {
+    "build:dll": "better-npm-run build:dll",
+    "build:dll:debug": "better-npm-run build:dll:debug"
+  },
+  "betterScripts": {
+    "build:dll": {
+      "command": "webpack --config ./config/webpack.dll.production.config.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "build:dll:debug": {
+      "command": "webpack --config ./config/webpack.dll.development.config.js",
+      "env": {
+        "DEBUG": "build,webpack-compile",
+        "NODE_ENV": "development"
+      }
+    },
+    "start": {
+      "command": "node ./app/serverEntry.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nasushkov/aggressive-split-test.git"
+  },
+  "author": "Nikita Sushkov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nasushkov/aggressive-split-test/issues"
+  },
+  "homepage": "https://github.com/nasushkov/aggressive-split-test#readme",
+  "dependencies": {
+    "better-npm-run": "0.0.13",
+    "clean-webpack-plugin": "^0.1.14",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^5.0.1",
+    "react-redux-form": "^1.5.1",
+    "redux": "^3.6.0",
+    "webpack-merge": "^2.0.0"
+  }
+}
